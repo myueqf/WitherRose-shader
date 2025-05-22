@@ -11,10 +11,10 @@ uniform mat4 gbufferPreviousModelView, gbufferModelViewInverse;
 uniform sampler2D colortex0;
 uniform sampler2D depthtex1;
 
-const float DEPTH_THRESHOLD = 0.66;
+const float DEPTH_THRESHOLD = 0.66; // 深度阈值
 #include "/lib/settings.glsl"
-#define MOTION_BLUR_STRENGTH 0.6
-#define MOTION_BLUR_SAMPLES 8
+#define MOTION_BLUR_STRENGTH 0.6    // 强度
+#define MOTION_BLUR_SAMPLES 8       // 采样次数
 
 float random(vec2 st) {
     return fract(sin(dot(st.xy, vec2(12.9898, 78.233))) * 43758.5453123);

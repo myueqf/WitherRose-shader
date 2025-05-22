@@ -11,8 +11,6 @@ uniform sampler2D colortex0;
 
 #include "/lib/settings.glsl"
 #include "/lib/colorgrading.glsl"
-#define DotSize 3
-#define Celradius 3
 
 float edepth(vec2 coord) {
     return texture2D(colortex5, coord).x;
@@ -71,6 +69,8 @@ void main() {
     finalColor = wither(finalColor);
     #elif COLORGRADING_EFFECT == 3
     finalColor = CL8UDS(finalColor);
+    #elif COLORGRADING_EFFECT == 4
+    finalColor = QAQ(finalColor);
     #endif
     // 漫画描边
     #if CELSHADE == 1

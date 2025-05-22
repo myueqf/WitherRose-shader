@@ -69,3 +69,15 @@ vec4 CL8UDS(vec4 inputColor) {
     return vec4(resultColor, inputColor.a);
 }
 
+
+// 测试
+vec4 QAQ(vec4 inputColor) {
+    float gray = dot(inputColor.rgb, vec3(0.299, 0.587, 0.114));
+    const vec3 darkColor = vec3(31.0, 34.0, 52.0) / 255.0;
+    const vec3 lightColor = vec3(255.0, 250.0, 240.0) / 255.0;
+    float level = floor(gray * 3.0 + 0.5);
+    float t = level / 3.0;
+    vec3 resultColor = mix(darkColor, lightColor, t);
+
+    return vec4(resultColor, inputColor.a);
+}
